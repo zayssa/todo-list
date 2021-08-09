@@ -18,7 +18,7 @@ export const FirebaseState = ({ children }) => {
 
   const fetchNotes = async () => {
     showLoader();
-    const res = await axios.get(`${url}/notes.json`);
+    const res = await axios.get(`${url || ""}/notes.json`);
     if (!res.data) {
       dispatch({
         type: FETCH_NOTES,
